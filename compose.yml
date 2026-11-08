@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: rushivarma/mypyap:database
+    image: rushivarma/diwali:database
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: rushivarma/mypyap:auth
+    image: rushivarma/diwali:auth
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book_service:
-    image: rushivarma/mypyap:book
+    image: rushivarma/diwali:book
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow_service:
-    image: rushivarma/mypyap:borrow
+    image: rushivarma/diwali:borrow
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: rushivarma/mypyap:fe
+    image: rushivarma/diwali:fe
     deploy:
       replicas: 1
     ports:
